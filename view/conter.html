@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <!-- さっき落としてきたknockoutをインポート -->
+    <script src="../lib/knockout.js"></script>
+    <!-- 下に表示してるViewModelのファイルをインポート -->
+    <script src="../js/index.js"></script>
+  </head>
+  <body>
+    conter: <input type="number" id="counter" data-bind="value: count" />
+  </body>
+  <script>
+  var model = {
+    count: ko.observable(0),
+  };
+  ko.applyBindings(model ,document.body);
+  setInterval(function(){
+    model.count(parseInt(model.count(), 10) + 1);
+  }, 1000);
+  </script>
+</html>
